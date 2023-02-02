@@ -3,6 +3,7 @@ const displayValorActual = document.getElementById('valorActual');
 const botonesNumeros = document.querySelectorAll('.numero');
 const botonesOperadores = document.querySelectorAll('.operador');
 
+
 const display = new Display (displayValorAnterior, displayValorActual);
 
 botonesNumeros.forEach(boton =>{
@@ -11,4 +12,10 @@ botonesNumeros.forEach(boton =>{
 
 botonesOperadores.forEach(boton =>{
     boton.addEventListener('click', () => display.computar(boton.value))
+});
+
+getAllPosts().then(response => {
+    console.log(response);
+}).catch(e => {
+    console.log(e);
 });
